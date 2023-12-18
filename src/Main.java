@@ -1,7 +1,7 @@
-import Animals.Animal;
-import Animals.fly.Duck;
-import Animals.pets.Cat;
-import Animals.pets.Dog;
+import animals.Animal;
+import animals.fly.Duck;
+import animals.pets.Cat;
+import animals.pets.Dog;
 import data.Commands;
 
 import java.util.ArrayList;
@@ -18,10 +18,18 @@ public class Main {
         String inpWord = "";
 
         while (true) {
-            System.out.println("Меню");
             System.out.println("Введите add/list/exit");
             inpWord = scanner.next().trim().toLowerCase();
             scanner.nextLine();
+
+           try {
+               Commands word = Commands.valueOf(inpWord.toUpperCase());
+           }catch (IllegalArgumentException e) {
+               System.out.println("Введено некорректное значение");
+               continue;
+
+           }
+
 
             Commands word = Commands.valueOf(inpWord.toUpperCase());
             if (word != null) {
@@ -76,10 +84,10 @@ public class Main {
         scanner.nextLine();
 
         System.out.println("Введите возраст животного");
-        asd(scanner, "age");
+        ScannerType(scanner, "age");
 
         System.out.println("Введите вес животного");
-        asd(scanner, "weight");
+        ScannerType(scanner, "weight");
 
 
         System.out.println("Введите цвет животного");
@@ -87,18 +95,23 @@ public class Main {
         IS_TRUE = false;
     }
 
-    private static void asd(Scanner scanner, String type) {
+    private static void ScannerType(Scanner scanner, String type) {
         while (true) {
             if (scanner.hasNextInt()) {
-                switch (type) {
-                    case "age":
-                        Animal.setAge(Integer.parseInt(scanner.nextLine()));
-                        break;
-                    case "weight":
-                        Animal.setWeight(Integer.parseInt(scanner.nextLine()));
-                        break;
+                int inputValue = Integer.parseInt(scanner.nextLine());
+                if (inputValue < 0) {
+                    System.out.println("Вы ввели отрицательное значение, попробуйте снова");
+                } else {
+                    switch (type) {
+                        case "age":
+                            Animal.setAge(inputValue);
+                            break;
+                        case "weight":
+                            Animal.setWeight(inputValue);
+                            break;
+                    }
+                    break;
                 }
-                break;
             } else {
                 System.out.println("Вы ввели некорректные данные, попробуйте снова");
                 scanner.nextLine();

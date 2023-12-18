@@ -1,6 +1,6 @@
-package Animals;
+package animals;
 
-public class Animal {
+public abstract class Animal {
     private static String name;
     private static int age;
     private static int weight;

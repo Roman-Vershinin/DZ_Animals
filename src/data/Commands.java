@@ -5,6 +5,16 @@ public enum Commands {
     LIST("list"),
     EXIT("exit");
 
+    public static Commands fromString(String text) {
+        try {
+            return valueOf(text);
+        } catch (IllegalArgumentException ex) {
+            // Обработка недопустимого значения
+            return null;
+        }
+    }
+
+
 
     private String value;
 
