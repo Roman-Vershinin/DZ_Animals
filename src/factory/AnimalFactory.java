@@ -5,7 +5,7 @@ import animals.pets.Cat;
 import animals.pets.Dog;
 import java.util.Scanner;
 public class AnimalFactory {
-    public static String add1Animal(Scanner scanner, String type) {
+    public static String addAnimalFactory(Scanner scanner, String type) {
         switch (type) {
             case "cat":
                return addAnimal(scanner, "cat");
@@ -20,7 +20,7 @@ public class AnimalFactory {
                 System.out.println("Введено некорректное значение, введите заново");
                 type = scanner.next().trim().toLowerCase();
                 scanner.nextLine();
-                return add1Animal(scanner,type);
+                return addAnimalFactory(scanner,type);
         }
     }
     private static String addAnimal(Scanner scanner, String animalType) {

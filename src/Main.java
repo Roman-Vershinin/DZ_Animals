@@ -35,7 +35,7 @@ public class Main {
                         while (true) {
                             type = scanner.next().trim().toLowerCase();
                             scanner.nextLine();
-                            Animals.add(AnimalFactory.add1Animal(scanner, type));
+                            Animals.add(AnimalFactory.addAnimalFactory(scanner, type));
                             break;
                         }
 
