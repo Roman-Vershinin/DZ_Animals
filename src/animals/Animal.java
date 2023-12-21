@@ -67,10 +67,6 @@ public abstract class Animal {
     @Override
     public String toString() {
 
-        
-
-
-
         int ostatok = 0;
         ostatok = age % 10;
 
@@ -84,6 +80,4 @@ public abstract class Animal {
             pet = "Привет! Меня зовут " + name + ", мне " + age + " лет" + ", я вешу " + weight + " кг, мой цвет - " + color;
         return pet;
     }
-
-
 }

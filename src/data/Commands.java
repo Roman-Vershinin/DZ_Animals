@@ -13,16 +13,8 @@ public enum Commands {
             return null;
         }
     }
-
-
-
     private String value;
-
-
-
     Commands(String value) {
         this.value = value;
     }
-
-
 }

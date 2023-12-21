@@ -2,7 +2,7 @@ package animals.fly;
 
 import animals.Animal;
 
-public class Duck extends Animal implements Flying {
+public class Duck extends Animal implements IFlying {
 
     public Duck(String name, int age, int weight, String color) {
         Animal.setName(name);
